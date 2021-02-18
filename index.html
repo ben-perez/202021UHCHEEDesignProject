@@ -22,20 +22,6 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -45,6 +31,30 @@
       </nav>
 
     <div>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#aboutModal">About</button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="aboutModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">About</h4>
+            </div>
+            <div class="modal-body">
+              <p>As part of the 2020-21 UH Chemical Engineering Senior Design class, our group was tasked with designing a process for producing ethylene glycol. The work for this project was done over the course of a complete academic year. We leveraged concepts, techniques, and ideas from our previous coursework.</p>
+              <p>In the first semester of this class, we designed the process without the use of simulation programs. In the second, we optimized our initial design with the use of Aspen Plus. 
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
       <button onclick="changeTextColor()">
         Click me for alerts!
       </button>
