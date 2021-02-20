@@ -16,6 +16,13 @@ function convertRelHeightToAbs(relHeight){
     return absHeight;
 }
 
+function type(d) {
+
+    return {"Application":d.Application,
+            "Amount":d.Amount};
+
+}
+
 var megUsesCsvPath = "./Assets/MEGUses.csv";
 
 var megChart = d3.select("#meg-bar-chart");
@@ -27,11 +34,12 @@ var height = convertRelHeightToAbs(megChart.attr("height")) - margin;
 var xScale = d3.scaleBand().range([0,width]).padding(0.4);
 var yScale = d3.scaleLinear().range([height,0]);
 
-d3.csv(megUsesCsvPath, function(data) {
+d3.csv(megUsesCsvPath, type)
+  .then(res => {
     
 
-    xScale.domain(data.map(function(d){return d.Application;}));
-    yScale.domain([0, d3.max(data, function(d) { return d.Amount;})])
+    xScale.domain(res.map(function(d){return d.Application;}));
+    yScale.domain([0, d3.max(res, function(d) { return d.Amount;})])
 
     var g = megChart.append("g")
                 .attr("transform", "translate(0," + height + ")")
