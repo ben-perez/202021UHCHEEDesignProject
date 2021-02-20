@@ -27,32 +27,52 @@ var megUsesCsvPath = "./Assets/MEGUses.csv";
 
 var megChart = d3.select("#meg-bar-chart");
 
-var margin = 150;
+var margin = 50;
 var width = convertRelWidthToAbs(megChart.attr("width")) - margin;
 var height = convertRelHeightToAbs(megChart.attr("height")) - margin;
 
 var xScale = d3.scaleBand().range([0,width]).padding(0.4);
 var yScale = d3.scaleLinear().range([height,0]);
-var g = megChart.append("g")
-                .attr("transform", "translate(" + (margin/2) + "," + (margin/2) + ")");
+
+const gXAxis = megChart.append("g")
+                       .attr("transform", `translate(0, ${height})`);
+
+const gYAxis = megChart.append('g');
 
 d3.csv(megUsesCsvPath, type)
-  .then(res => {
+  .then(data => {
     
-    xScale.domain(res.map(function(d){return d.Application;}));
-    yScale.domain([0, d3.max(res, function(d) { return d.Amount;})])
+    const y = d3.scaleLinear()
+                .domain([0, d3.max(data, d => d.Amount)])
+                .range([height, 0]);
 
-    g.append("g")
-     .attr("transform", "translate(0," + height + ")")
-     .call(d3.axisBottom(xScale));
+    const x = d3.scaleBand()
+                .domain(data.map(item => item.Application))
+                .range([0, 500])
+                .paddingInner(0.2)
+                .paddingOuter(0.2);
+                
+    const rects = graph.selectAll("rect")
+                       .data(data);
 
-    g.append("g")
-        .call(d3.axisLeft(yScale).tickFormat(function(d){
-            return d;
-        }).ticks(10))
-        .append("text")
-        .attr("y", 6)
-        .attr("dy", "0.71em")
-        .attr("text-anchor", "end")
-        .text("value");
+
+    rects.attr("width", x.bandwidth)
+        .attr("height", d => height - y(d.Amount))
+        .attr("x", d => x(d.Period))
+        .attr("y", d => y(d.Amount));
+
+    rects.enter()
+         .append("rect")
+         .attr("width", x.bandwidth)
+         .attr("height", d => graphHeight - y(d.Amount))
+         .attr("x", d => x(d.Period))
+         .attr("y", d => y(d.Amount));
+
+    const xAxis = d3.axisBottom(x);
+    const yAxis = d3.axisLeft(y)
+                    .ticks(5)
+                    .tickFormat(d => d);
+                    
+    gXAxis.call(xAxis);
+    gYAxis.call(yAxis);
 })
