@@ -1,3 +1,7 @@
+.overall-container {
+    float: right;
+}
+
 .floating-img {   
     animation-name: floating; 
     animation-duration: 3s; 
