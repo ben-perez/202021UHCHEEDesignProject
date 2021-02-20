@@ -52,8 +52,8 @@ d3.csv(megUsesCsvPath, type)
                 .paddingInner(0.2)
                 .paddingOuter(0.2);
                 
-    const rects = graph.selectAll("rect")
-                       .data(data);
+    const rects = megChart.selectAll("rect")
+                          .data(data);
 
 
     rects.attr("width", x.bandwidth)
@@ -72,7 +72,7 @@ d3.csv(megUsesCsvPath, type)
     const yAxis = d3.axisLeft(y)
                     .ticks(5)
                     .tickFormat(d => d);
-                    
+
     gXAxis.call(xAxis);
     gYAxis.call(yAxis);
 })
