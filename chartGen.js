@@ -34,7 +34,7 @@ var height = convertRelHeightToAbs(megChart.attr("height")) - margin;
 var xScale = d3.scaleBand().range([0,width]).padding(0.4);
 var yScale = d3.scaleLinear().range([height,0]);
 var g = megChart.append("g")
-                .attr("transform", "translate(" + 100 + "," + 100 + ")");
+                .attr("transform", "translate(" + (margin/2) + "," + (margin/2) + ")");
 
 d3.csv(megUsesCsvPath, type)
   .then(res => {
