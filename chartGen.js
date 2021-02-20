@@ -1,5 +1,5 @@
 
-var megUsesCsvPath = "Asset/MEG Uses.csv";
+var megUsesCsvPath = "Asset/MEGUses.csv";
 
 var megChart = d3.select("#meg-bar-chart");
 
