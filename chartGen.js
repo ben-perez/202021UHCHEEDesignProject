@@ -16,7 +16,7 @@ function convertRelHeightToAbs(relHeight){
     return absHeight;
 }
 
-var megUsesCsvPath = "./Asset/MEGUses.csv";
+var megUsesCsvPath = "./Assets/MEGUses.csv";
 
 var megChart = d3.select("#meg-bar-chart");
 
