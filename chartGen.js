@@ -64,7 +64,7 @@ d3.csv(megUsesCsvPath, type)
     rects.enter()
          .append("rect")
          .attr("width", x.bandwidth)
-         .attr("height", d => graphHeight - y(d.Amount))
+         .attr("height", d => height - y(d.Amount))
          .attr("x", d => x(d.Period))
          .attr("y", d => y(d.Amount));
 
