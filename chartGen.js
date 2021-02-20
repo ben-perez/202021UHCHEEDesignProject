@@ -1,11 +1,28 @@
+//helper functions
 
-var megUsesCsvPath = "Asset/MEGUses.csv";
+function convertRelWidthToAbs(relWidth){
+
+    let widthPercent = parseFloat(relWidth)/100;
+    var absWidth = widthPercent*window.innerWidth;
+
+    return absWidth;
+}
+
+function convertRelHeightToAbs(relHeight){
+
+    let heightPercent = parseFloat(relHeight)/100;
+    var absHeight = heightPercent*window.innerHeight;
+
+    return absHeight;
+}
+
+var megUsesCsvPath = "./Asset/MEGUses.csv";
 
 var megChart = d3.select("#meg-bar-chart");
 
 var margin = 50;
-var width = megChart.attr("width") - margin;
-var height = megChart.attr("height") - margin;
+var width = convertRelWidthToAbs(megChart.attr("width")) - margin;
+var height = convertRelHeightToAbs(megChart.attr("height")) - margin;
 
 var xScale = d3.scaleBand().range([0,width]).padding(0.4);
 var yScale = d3.scaleLinear().range([height,0]);
