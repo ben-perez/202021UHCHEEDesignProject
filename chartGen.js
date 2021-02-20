@@ -27,7 +27,7 @@ var megUsesCsvPath = "./Assets/MEGUses.csv";
 
 var megChart = d3.select("#meg-bar-chart");
 
-var margin = 50;
+var margin = 100;
 var width = convertRelWidthToAbs(megChart.attr("width")) - margin;
 var height = convertRelHeightToAbs(megChart.attr("height")) - margin;
 
