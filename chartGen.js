@@ -48,7 +48,7 @@ d3.csv(megUsesCsvPath, type)
 
     const x = d3.scaleBand()
                 .domain(data.map(item => item.Application))
-                .range([0, 500])
+                .range([0, width])
                 .paddingInner(0.2)
                 .paddingOuter(0.2);
                 
@@ -58,14 +58,14 @@ d3.csv(megUsesCsvPath, type)
 
     rects.attr("width", x.bandwidth)
         .attr("height", d => height - y(d.Amount))
-        .attr("x", d => x(d.Period))
+        .attr("x", d => x(d.Application))
         .attr("y", d => y(d.Amount));
 
     rects.enter()
          .append("rect")
          .attr("width", x.bandwidth)
          .attr("height", d => height - y(d.Amount))
-         .attr("x", d => x(d.Period))
+         .attr("x", d => x(d.Application))
          .attr("y", d => y(d.Amount));
 
     const xAxis = d3.axisBottom(x);
