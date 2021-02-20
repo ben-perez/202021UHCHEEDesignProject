@@ -19,7 +19,7 @@ d3.csv(megUsesCsvPath, function(err, data) {
     xScale.domain(data.map(function(d){return d.Application;}));
     yScale.domain([0, d3.max(data, function(d) { return d.Amount;})])
 
-    g = megChart.append("g")
+    var g = megChart.append("g")
                 .attr("transform", "translate(0," + height + ")")
                 .call(d3.axisBottom(xScale));
 
