@@ -11,12 +11,13 @@ d3.csv(memberDutiesCsvPath, d => d)
                .append("div")
                .attr("class","row")
                .append("h6")
-               .text(d => d.Member);
-
-    teamSection.selectAll("div")
-               .data(data)
-               .enter()
+               .text(d => d.Member)
                .append("p")
                .text(d => d.Duties);
+
+    // teamSection.selectAll("div")
+    //            .data(data)
+    //            .enter()
+
 
   })
