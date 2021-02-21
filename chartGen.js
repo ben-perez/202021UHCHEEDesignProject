@@ -38,12 +38,14 @@ var newChart = d3.csv(megUsesCsvPath, type).then(data => {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Uses of MEG By Application',
-                data: values,
-                borderWidth: 1
+                data: values
             }]
         },
         options: {
+            title: {
+                display: true,
+                text: 'EG Usage By Application'
+            },
             scales: {
                 yAxes: [{
                     ticks: {
