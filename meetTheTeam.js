@@ -9,7 +9,7 @@ d3.json(memberDutiesJsonPath, d => d)
                             .data(data)
                             .enter()
                             .append("div")
-                            .attr("class","row");
+                            .attr("class","column");
 
     divs.append("h6").text(d => d.Member);
     divs.append("p").text(d => d.Duties);
