@@ -20,7 +20,7 @@ d3.json(memberDutiesJsonPath, d => d)
                                     .enter()
                                     .append("div")
                                     .attr("class","card")
-                                    .attr("style","width: 60%")
+                                    .attr("style","width: 90%")
                                     .append("div")
                                     .attr("class","card-body");
 
