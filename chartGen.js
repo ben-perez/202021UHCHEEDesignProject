@@ -19,7 +19,7 @@ function convertRelHeightToAbs(relHeight){
 function type(d) {
 
     return {"Application":d.Application,
-            "Amount":d.Amount};
+            "Amount":parseFloat(d.Amount)};
 
 }
 
@@ -66,9 +66,9 @@ d3.csv(megUsesCsvPath, type)
 
 
     rects.attr("width", x.bandwidth)
-        .attr("height", d => height - y(d.Amount))
-        .attr("x", d => x(d.Application))
-        .attr("y", d => y(d.Amount));
+         .attr("height", d => height - y(d.Amount))
+         .attr("x", d => x(d.Application))
+         attr("y", d => y(d.Amount));
 
     rects.enter()
          .append("rect")
