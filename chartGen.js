@@ -27,9 +27,9 @@ var megUsesCsvPath = "./Assets/MEGUses.csv";
 
 var megChart = d3.select("#meg-bar-chart");
 
-var margin = 50;
-var width = convertRelWidthToAbs(megChart.attr("width")) - margin;
-var height = convertRelHeightToAbs(megChart.attr("height")) - margin;
+var margin = 60;
+var width = convertRelWidthToAbs(megChart.attr("width")) - margin/2;
+var height = convertRelHeightToAbs(megChart.attr("height")) - margin/2;
 
 var xScale = d3.scaleBand().range([0,width]).padding(0.4);
 var yScale = d3.scaleLinear().range([height,0]);
@@ -63,6 +63,7 @@ d3.csv(megUsesCsvPath, type)
 
     rects.enter()
          .append("rect")
+         .attr("class","chart-bar")
          .attr("width", x.bandwidth)
          .attr("height", d => height - y(d.Amount))
          .attr("x", d => x(d.Application))
