@@ -23,63 +23,33 @@ function type(d) {
 
 }
 
-const baseHeight = 300;
-const baseWidth = 500;
-const margin = {"top":20, "bottom":20, "left": 60, "right":60}
 
 var megUsesCsvPath = "./Assets/MEGUses.csv";
 
+const data = d3.csv(megUsesCsvPath, type);
 
-var width = baseWidth - margin.left - margin.right;
-var height = baseHeight - margin.top - margin.bottom;
+var labels = data.map(d => d.Application);
+var values = data.map(d => d.Amount);
 
-var megChart = d3.select("#meg-bar-chart")
-                 .attr("height", baseHeight)
-                 .attr("width", baseWidth)
-                 .attr("transform", `translate(${margin.left}, ${margin.top})`);
+var ctx = document.getElementById("meg-bar-chart");
 
-var xScale = d3.scaleBand().range([0,width]).padding(0.4);
-var yScale = d3.scaleLinear().range([height,0]);
-
-const gXAxis = megChart.append("g")
-                       .attr("transform", `translate(0, ${height})`);
-
-const gYAxis = megChart.append('g');
-
-d3.csv(megUsesCsvPath, type)
-  .then(data => {
-    
-    const y = d3.scaleLinear()
-                .domain([0, d3.max(data, d => d.Amount)])
-                .range([height, 0]);
-
-    const x = d3.scaleBand()
-                .domain(data.map(item => item.Application))
-                .range([0, width])
-                .paddingInner(0.2)
-                .paddingOuter(0.2);
-                
-    const rects = megChart.selectAll("rect")
-                          .data(data);
-
-
-    rects.attr("width", x.bandwidth)
-         .attr("height", d => height - y(d.Amount))
-         .attr("x", d => x(d.Application))
-         .attr("y", d => y(d.Amount));
-
-    rects.enter()
-         .append("rect")
-         .style("fill","#C8102E")
-         .attr("width", x.bandwidth)
-         .attr("height", d => height - y(d.Amount))
-         .attr("x", d => x(d.Application))
-         .attr("y", d => y(d.Amount));
-
-    const xAxis = d3.axisBottom(x);
-    const yAxis = d3.axisLeft(y)
-                    .ticks(5);
-
-    gXAxis.call(xAxis);
-    gYAxis.call(yAxis);
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'Uses of MEG By Application',
+            data: values,
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
 })

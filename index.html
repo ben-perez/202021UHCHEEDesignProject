@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css" type="type/css">
     <script src="Libraries/d3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
 </head>
 <body>
@@ -66,9 +67,9 @@
             <p>
               Ethylene glycol serves many industries ranging from automotive to polyesters. It is one of the most important chemicals in industry today, therefore designing a process to produce it offers plentiful challenges and learning opportunities for the up-and-coming chemical engineer. 
             </p>
-            <svg id="meg-bar-chart">
+            <canvas height="400" width="400" id="meg-bar-chart">
             
-            </svg>
+            </canvas>
             <p>
               As mentioned previously, we had no access to process simulation software for the first half of the project. Therefore, we had to rely on first principles and certain assumptions to generate the inital process design. We used the following knowledge to accomplish this first milestone:
             </p>
@@ -94,7 +95,7 @@
         <h3>
           Meet The Team
         </h3>
-        
+
       </div>
     </div>
 
