@@ -30,8 +30,6 @@ const margin = {"top":20, "bottom":20, "left": 60, "right":60}
 var megUsesCsvPath = "./Assets/MEGUses.csv";
 
 
-
-
 var width = baseWidth - margin.left - margin.right;
 var height = baseHeight - margin.top - margin.bottom;
 
@@ -80,8 +78,7 @@ d3.csv(megUsesCsvPath, type)
 
     const xAxis = d3.axisBottom(x);
     const yAxis = d3.axisLeft(y)
-                    .ticks(5)
-                    .tickFormat(d => d);
+                    .ticks(5);
 
     gXAxis.call(xAxis);
     gYAxis.call(yAxis);
