@@ -40,7 +40,7 @@ var xScale = d3.scaleBand().range([0,width]).padding(0.4);
 var yScale = d3.scaleLinear().range([height,0]);
 
 const gXAxis = megChart.append("g")
-                       .attr("transform", `translate(0, ${height})`);
+                       .attr("transform", `translate(0, ${baseHeight})`);
 
 const gYAxis = megChart.append('g');
 
