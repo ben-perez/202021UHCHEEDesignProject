@@ -23,24 +23,28 @@ function type(d) {
 
 }
 
-const baseHeight = 400;
-const baseWidth = 650;
+const baseHeight = 600;
+const baseWidth = 1000;
+const margin = {"top":20, "bottom":20, "left": 100, "right":100}
 
 var megUsesCsvPath = "./Assets/MEGUses.csv";
 
+
+
+
+var width = baseWidth - margin.left - margin.right;
+var height = baseHeight - margin.top - margin.bottom;
+
 var megChart = d3.select("#meg-bar-chart")
                  .attr("height", baseHeight)
-                 .attr("width", baseWidth);
-
-var margin = 100;
-var width = baseWidth - margin;
-var height = baseHeight - margin;
+                 .attr("width", baseWidth)
+                 .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 var xScale = d3.scaleBand().range([0,width]).padding(0.4);
 var yScale = d3.scaleLinear().range([height,0]);
 
 const gXAxis = megChart.append("g")
-                       .attr("transform", `translate(0, ${baseHeight})`);
+                       .attr("transform", `translate(0, ${height})`);
 
 const gYAxis = megChart.append('g');
 
