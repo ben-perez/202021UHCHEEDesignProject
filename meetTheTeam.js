@@ -20,7 +20,7 @@ d3.json(memberDutiesJsonPath, d => d)
                                     .enter()
                                     .append("div")
                                     .attr("class","card")
-                                    .attr("style","width: 20rem")
+                                    .attr("style","width: 60%")
                                     .append("div")
                                     .attr("class","card-body");
 
@@ -35,6 +35,7 @@ d3.json(memberDutiesJsonPath, d => d)
     profileCards.append("a")
                 .attr("href",d => d.LinkedIn)
                 .text("LinkedIn");
+
 
     // teamSection.selectAll("div")
     //            .data(data)
