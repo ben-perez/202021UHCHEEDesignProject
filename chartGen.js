@@ -32,7 +32,7 @@ var newChart = d3.csv(megUsesCsvPath, type).then(data => {
     var values = data.map(d => d.Amount);
 
     var ctx = document.getElementById("meg-bar-chart");
-    ctx.style.backgroundColor = "#FFF9D9";
+    ctx.style.backgroundColor = "white";
 
     const heightModifier = 0.01;
     const widthModifier = 0.02;
