@@ -12,7 +12,7 @@ d3.json(memberDutiesJsonPath, d => d)
                .attr("class","row")
                .append("h6")
                .text(d => d.Member)
-               .append("p")
+               .insert("p")
                .text(d => d.Duties);
 
     // teamSection.selectAll("div")
