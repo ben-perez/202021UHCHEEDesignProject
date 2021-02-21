@@ -13,7 +13,9 @@ d3.json(memberDutiesJsonPath, d => d)
 
     divs.append("h6").text(d => d.Member);
     divs.append("p").text(d => d.Duties);
-    divs.append("a").attr("href", d => d.LinkedIn).text("LinkedIn");
+    divs.append("a").attr("href", d => d.LinkedIn)
+                    .attr("target", "_blank")
+                    .text("LinkedIn");
     // teamSection.selectAll("div")
     //            .data(data)
     //            .enter()
