@@ -47,6 +47,9 @@ var newChart = d3.csv(megUsesCsvPath, type).then(data => {
                 display: true,
                 text: 'EG Usage By Application'
             },
+            legend: {
+                display: false
+            },
             scales: {
                 yAxes: [{
                     ticks: {
