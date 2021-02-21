@@ -23,16 +23,18 @@ function type(d) {
 
 }
 
-var megUsesCsvPath = "./Assets/MEGUses.csv";
-
-var megChart = d3.select("#meg-bar-chart");
-
 const baseHeight = 400;
 const baseWidth = 650;
 
+var megUsesCsvPath = "./Assets/MEGUses.csv";
+
+var megChart = d3.select("#meg-bar-chart")
+                 .attr("height", baseHeight)
+                 .attr("width", baseWidth);
+
 var margin = 60;
-var width = baseWidth - margin/2;
-var height = baseHeight - margin/2;
+var width = baseWidth - margin;
+var height = baseHeight - margin;
 
 var xScale = d3.scaleBand().range([0,width]).padding(0.4);
 var yScale = d3.scaleLinear().range([height,0]);
