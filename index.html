@@ -30,19 +30,21 @@
               <a class="nav-link" href="#method-section" style="color: #FFF9D9">Methodology<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
+              <a class="nav-link" href="#results-section" style="color: #FFF9D9">Results<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
               <a class="nav-link" href="#team-section" style="color: #FFF9D9">Meet The Team<span class="sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
       </nav>
       <br/>
-      <br/>
     <div class="overall-container">
 
       <div id="landing-section">
       </div>
       <div id="about-section" class="container">
-
+<!-- TODO: Split About Us section content between Introduction and Meet the Team. It is becoming redundant -->
         <div>
             <h3>
               About Us
@@ -82,10 +84,55 @@
         <h3>
           Methodology
         </h3>
+        <p>
+          Listed below are the approaches we took for each major unit operation:
+          <!-- TODO: add table describing approach taken with each unit operation. I.e. Multi-component distillation -> FUG -->
+        </p>
+        <table class="table table-bordered">
+          <thead>
+            <th>Unit Operation</th>
+            <th>Approach</th>
+            <th>Application</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Multicomponent Distillation</td>
+              <td>Fenske-Underwood-Gilliland</td>
+              <td>Excel Solver</td>
+            </tr>
+            <tr>
+              <td>Binary Distillation</td>
+              <td>McCabe-Thiele</td>
+              <td>Excel</td>
+            </tr>
+            <tr>
+              <td>Absorber and Stripping Columns</td>
+              <td>Kremser Group Method</td>
+              <td>Excel Solver</td>
+            </tr>
+            <tr>
+              <td>Ethylene Glycol Reactor</td>
+              <td>Plug Flow Reactor</td>
+              <td>Excel and Newton's Method</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          For more details on our methodology, you may read our report linked below.
+        </p>
+        <a href="">Link to Report</a>
         <a target="_blank" href="Assets/PFD - Group 13.pdf"> 
          <img style = "background-color: #FFF9D9;" src="Assets/PFD.svg" class="floating-img" height="auto" width="100%" data-toggle="tooltip" data-placement="top" title="Click to view PFD">
         </a>
       </div>
+      <!-- TODO: add section for Results describing how close we got to the simulation. Potentially we could add a screenshot of the email sent to us by Fleischer -->
+      <br/>
+      <div id="team-section" class="container">
+        <h3>
+          Results
+        </h3>
+      </div>
+      <br/>
       <div id="team-section" class="container">
         <h3>
           Meet The Team
