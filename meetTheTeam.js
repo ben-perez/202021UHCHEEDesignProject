@@ -1,9 +1,9 @@
 
 
 var teamSection = d3.select("#team-section");
-var memberDutiesCsvPath = "Assets/MemberDuties.csv";
+var memberDutiesJsonPath = "Assets/MemberDuties.json";
 
-d3.csv(memberDutiesCsvPath, d => d)
+d3.json(memberDutiesJsonPath, d => d)
   .then(data => {
     teamSection.selectAll("div")
                .data(data)
