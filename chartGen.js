@@ -34,8 +34,8 @@ var newChart = d3.csv(megUsesCsvPath, type).then(data => {
     var ctx = document.getElementById("meg-bar-chart");
     ctx.style.backgroundColor = "#FFF9D9";
 
-    const heightModifier = 0.2;
-    const widthModifier = 0.25;
+    const heightModifier = 0.1;
+    const widthModifier = 0.15;
 
     ctx.height = window.innerHeight * heightModifier;
     ctx.width = window.innerWidth * widthModifier;
