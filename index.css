@@ -3,6 +3,10 @@
     justify-content: center;
 }
 
+.about-block-text {
+    font:small;
+}
+
 .chart-bar {
     fill: #C8102E;
 }
