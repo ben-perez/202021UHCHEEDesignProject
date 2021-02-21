@@ -33,7 +33,7 @@ var newChart = d3.csv(megUsesCsvPath, type).then(data => {
 
     var ctx = document.getElementById("meg-bar-chart");
     ctx.style.backgroundColor = "#FFF9D9";
-    
+
     return new Chart(ctx, {
         type: 'bar',
         data: {
@@ -44,6 +44,7 @@ var newChart = d3.csv(megUsesCsvPath, type).then(data => {
             }]
         },
         options: {
+            responsive: true,
             title: {
                 display: true,
                 text: 'EG Usage By Application'
