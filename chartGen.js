@@ -26,30 +26,33 @@ function type(d) {
 
 var megUsesCsvPath = "./Assets/MEGUses.csv";
 
-const data = d3.csv(megUsesCsvPath, type);
+var newChart = d3.csv(megUsesCsvPath, type).then(data => {
 
-var labels = data.map(d => d.Application);
-var values = data.map(d => d.Amount);
+    var labels = data.map(d => d.Application);
+    var values = data.map(d => d.Amount);
 
-var ctx = document.getElementById("meg-bar-chart");
+    var ctx = document.getElementById("meg-bar-chart");
 
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: labels,
-        datasets: [{
-            label: 'Uses of MEG By Application',
-            data: values,
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
+    return new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Uses of MEG By Application',
+                data: values,
+                borderWidth: 1
             }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
         }
-    }
-})
+    })
+
+});
+
