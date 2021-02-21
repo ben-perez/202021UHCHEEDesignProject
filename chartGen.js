@@ -32,7 +32,7 @@ var megChart = d3.select("#meg-bar-chart")
                  .attr("height", baseHeight)
                  .attr("width", baseWidth);
 
-var margin = 60;
+var margin = 100;
 var width = baseWidth - margin;
 var height = baseHeight - margin;
 
