@@ -38,7 +38,8 @@ var newChart = d3.csv(megUsesCsvPath, type).then(data => {
         data: {
             labels: labels,
             datasets: [{
-                data: values
+                data: values,
+                backgroundColor: "#C8102E"
             }]
         },
         options: {
