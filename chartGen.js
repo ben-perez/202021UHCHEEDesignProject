@@ -23,9 +23,9 @@ function type(d) {
 
 }
 
-const baseHeight = 600;
-const baseWidth = 1000;
-const margin = {"top":20, "bottom":20, "left": 100, "right":100}
+const baseHeight = 300;
+const baseWidth = 500;
+const margin = {"top":20, "bottom":20, "left": 60, "right":60}
 
 var megUsesCsvPath = "./Assets/MEGUses.csv";
 
