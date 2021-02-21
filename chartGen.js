@@ -72,7 +72,7 @@ d3.csv(megUsesCsvPath, type)
 
     rects.enter()
          .append("rect")
-         .attr("class","chart-bar")
+         .style("fill","#C8102E")
          .attr("width", x.bandwidth)
          .attr("height", d => height - y(d.Amount))
          .attr("x", d => x(d.Application))
