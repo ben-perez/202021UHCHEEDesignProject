@@ -63,7 +63,7 @@ var newChart = d3.csv(megUsesCsvPath, type).then(data => {
                     ticks: {
                         beginAtZero: true
                     },
-                    label: "Million Tons"
+                    scaleLabel: "Million Tons"
                 }]
             }
         }
