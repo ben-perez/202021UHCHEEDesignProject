@@ -53,7 +53,7 @@ var newChart = d3.csv(megUsesCsvPath, type).then(data => {
             responsive: true,
             title: {
                 display: true,
-                text: 'EG Usage By Application'
+                text: 'EG Usage By Application (million tons)'
             },
             legend: {
                 display: false
@@ -62,8 +62,7 @@ var newChart = d3.csv(megUsesCsvPath, type).then(data => {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true
-                    },
-                    scaleLabel: "Million Tons"
+                    }
                 }]
             }
         }
