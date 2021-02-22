@@ -3,6 +3,11 @@
     justify-content: center;
 }
 
+.about-block-content {
+    display:block;
+    margin:auto;
+}
+
 .about-block-text {
     font:small;
 }
