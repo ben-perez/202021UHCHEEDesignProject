@@ -62,7 +62,8 @@ var newChart = d3.csv(megUsesCsvPath, type).then(data => {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true
-                    }
+                    },
+                    label: "Million Tons"
                 }]
             }
         }
